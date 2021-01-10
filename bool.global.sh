@@ -1,0 +1,3 @@
+SHOW_WARNING=false
+
+TEMPO_BOOL=false
