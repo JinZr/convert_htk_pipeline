@@ -48,3 +48,5 @@ This file configures global boolean variables.
 
 - SHOW_WARNING - bool: set logging level for SOX and pysox, set to false to display error level log only.
 - TEMPO_BOOL - bool: set to true to enable tempo stretch.
+- FBK - bool: generate FBK feature.
+- PLP - bool: generate PLP feature.
