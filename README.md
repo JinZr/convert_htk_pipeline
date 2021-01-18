@@ -32,6 +32,7 @@ This chapter introduces the process of tempo stretch.
 - ❎ Convert HTK generated acoustic feature to Kaldi format
 - ❎ Convert Kaldi format acoustic to a Python readable format
 - Single-Pass Retraining ```For reference, please check HTK Book Page 167, *Single-Pass Retraining* ```
+  - [HTK Book Page](https://www.researchgate.net/publication/289354717_The_HTK_Book_version_35a)
 
 ## Manual
 
