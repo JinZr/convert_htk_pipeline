@@ -1,5 +1,6 @@
 source path.global.sh
 source bool.global.sh
+source flag.global.sh
 
 echo '<<<<<<<<<<<<< begin <<<<<<<<<<<<<'
 
@@ -23,7 +24,7 @@ if [ '$FBK' = true ]; then
         --plp_path=${PLP_PATH} \
         --file_list_path=${FILE_LIST_PATH} \ 
         --file_list_time_stamp_path=${FILE_LIST_TIME_STAMP_PATH} \
-        --feature_type='fbk'
+        --feature_type=${FEATURE_TYPE}
      ./main.fbk.sh
      cd ..
 fi
@@ -39,7 +40,7 @@ if [ '$PLP' = true ]; then
         --plp_path=${PLP_PATH} \
         --file_list_path=${FILE_LIST_PATH} \ 
         --file_list_time_stamp_path=${FILE_LIST_TIME_STAMP_PATH} \
-        --feature_type='plp'
+        --feature_type=${FEATURE_TYPE}
      ./main.plp.sh
      cd ..
 fi

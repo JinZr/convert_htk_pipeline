@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 
 
-def add_time_stamp(fin: str, fout: str):
+def add_time_stamp_fbk(fin: str, fout: str):
     result = []
 
     mapping_dct = {}

@@ -6,6 +6,9 @@ import argparse
 from funcs import *
 from double_check import *
 from add_time_fbk import *
+from add_time_plp import *
+
+import subprocess
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--base_path', type=str, required=True)
@@ -45,7 +48,7 @@ if __name__ == "__main__":
     id_filelist_dict = file_list_for_all(wav_path=wav_path)
   
     for dir_name in id_filelist_dict.keys():
-        print('<<<<<<<<<<<<<<<<<<<<< {} <<<<<<<<<<<<<<<<<<<<<'.format({dir_name}))
+        print('<<<<<<<<<<<<<<<< {}.scp file <<<<<<<<<<<<<<<<'.format({dir_name}))
         generate_scp_file(
             wav_path=wav_path,
             plp_path=fbk_path,
@@ -56,12 +59,12 @@ if __name__ == "__main__":
             file_names=id_filelist_dict[dir_name],
             )
 
-    fbk_sub_dirs = os.listdir(fbk_path)
+    feat_sub_dirs = os.listdir(fbk_path)
     
     if not os.path.exists(temp_file_list_path): os.makedirs(temp_file_list_path)
     if not os.path.exists(file_list_with_time_stamp_path): os.makedirs(file_list_with_time_stamp_path)
-    for fbk_sub_dir in fbk_sub_dirs:
-        print('<<<<<<<<<<<<<<<<<<<<< {} <<<<<<<<<<<<<<<<<<<<<'.format({fbk_sub_dir}))
+    for fbk_sub_dir in feat_sub_dirs:
+        print('<<<<<<<<<<<<<<<< {} <<<<<<<<<<<<<<<<'.format({fbk_sub_dir}))
         fbk_file_path = os.path.join(fbk_path, fbk_sub_dir)
         fbk_file_list = os.listdir(fbk_file_path)
         fbk_file_list = list(map(lambda x: os.path.join(fbk_file_path, x + '\n'), fbk_file_list))
@@ -69,6 +72,11 @@ if __name__ == "__main__":
         file_list_path = os.path.join(temp_file_list_path, '{}.scp'.format(fbk_sub_dir))
         with open(file_list_path, 'w+') as fout:
             fout.writelines(fbk_file_list)
+        
+        add_time_stamp = add_time_stamp_fbk
+        if FEATURE_TYPE == 'plp':  add_time_stamp = add_time_stamp_plp
+        # elif FEATURE_TYPE == 'mfcc': add_time_stamp = add_time_stamp_mfcc
+
         thread = threading.Thread(
             target=add_time_stamp,
             args=(file_list_path, os.path.join(file_list_with_time_stamp_path, '{}.scp'.format(fbk_sub_dir)))
