@@ -1,7 +1,9 @@
-SPKR_IDs=()
+SPKR_IDs=$(ls "${BASE_PATH}${WAV_PATH}")
 
-BASE_PATH=''
-ORIGINAL_FILE_LIST_PATH='' # path to scp files
+BASE_PATH='/project_bdda3/bdda/zrjin/Tempo_Generated/'
+ORIGINAL_FILE_LIST_PATH='/project/bdda/mengzhe/DataAugmentation/Data/UASpeech/UASpeech_trim/scp/train.orig.wav.scp' 
+    # path to scp files
+
 
 # feature_extraction
 WAV_PATH='WAVE/'
@@ -9,6 +11,8 @@ PLP_SCP_PATH='PLP_SCP/'
 PLP_PATH='PLP/'
 FBK_SCP_PATH='FBK_SCP/'
 FBK_PATH='FBK/'
+MFCC_SCP_PATH='MFCC_SCP/'
+MFCC_PATH='MFCC/'
 
 FILE_LIST_PATH='TEMP/'
 FILE_LIST_TIME_STAMP_PATH='STMP/'

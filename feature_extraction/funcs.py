@@ -3,14 +3,14 @@ from tqdm import tqdm
 import f_conf
 
 def generate_scp_file(
-    wav_path: str, plp_path: str, spkr_id: str, scp_path: str, scp_name: str, feature_type: str, file_names: [str]
+    wav_path: str, feat_path: str, spkr_id: str, scp_path: str, scp_name: str, feature_type: str, file_names: [str]
     ):
     if not os.path.exists(scp_path): os.makedirs(scp_path)
     with open(os.path.join(scp_path, scp_name), 'w+') as fout:
         file_names_with_return = map(
             lambda x: __generate_paired_wav_path__(os.path.join(wav_path, spkr_id), x)\
                 + ' '\
-                + __generate_paired_fbank_path__(os.path.join(plp_path, spkr_id), x, feature_type) + '\n', 
+                + __generate_paired_fbank_path__(os.path.join(feat_path, spkr_id), x, feature_type) + '\n', 
             file_names
         )
         fout.writelines(file_names_with_return)
