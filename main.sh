@@ -13,7 +13,7 @@ if [ '$TEMPO_BOOL' = true ]; then
 fi
 
 if [ '$FBK' = true ]; then
-     cd ./fbank_or_plp
+     cd ./feature_extraction
      python main.py \
         --base_path=${BASE_PATH} \
         --wav_path=${WAV_PATH} \
@@ -29,7 +29,7 @@ if [ '$FBK' = true ]; then
 fi
 
 if [ '$PLP' = true ]; then
-     cd ./fbank_or_plp
+     cd ./feature_extraction
      python main.py \
         --base_path=${BASE_PATH} \
         --wav_path=${WAV_PATH} \

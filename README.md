@@ -28,6 +28,7 @@ This chapter introduces the process of tempo stretch.
 - Generate acoustic using HTK
   - PLP
   - FBank
+  - MCFF
 - ❎ CMVN
 - ❎ Convert HTK generated acoustic feature to Kaldi format
 - ❎ Convert Kaldi format acoustic to a Python readable format
@@ -50,6 +51,8 @@ This file configures global path variables.
 - PLP_PATH - str: folder name of which stores the HTK generated PLP feature (e.g. ```PLP/```), the final path would be ```BASE_PATH/PLP_PATH/```.
 - FBK_SCP_PATH - str: folder name of which stores the SCP file for HTK generated FBK feature (e.g. ```FBK_SCP/```), the final path would be ```BASE_PATH/FBK_SCP_PATH/```.
 - FBK_PATH - str: folder name of which stores the HTK generated FBK feature (e.g. ```FBK/```), the final path would be ```BASE_PATH/FBK_PATH/```.
+- MFCC_PATH - str: folder name of which stores the HTK generated MFCC feature (e.g. ```MFCC/```), the final path would be ```BASE_PATH/MFCC_PATH/```.
+- MFCC_SCP_PATH - str: folder name of which stores the HTK generated MFCC feature (e.g. ```MFCC_SCP/```), the final path would be ```BASE_PATH/MFCC_SCP_PATH/```.
 - FILE_LIST_PATH - str: folder name of which stores the temperate SCP file for generated PLP or FBK feature that haven't been attached with time stamp yet (e.g. ```TEMP/```), the final path would be ```BASE_PATH/FILE_LIST_PATH/```.
 - FILE_LIST_TIME_STAMP_PATH - str: folder name of which stores the temperate SCP file for generated PLP or FBK feature that have been attached with time stamp yet (e.g. ```STMP/```), the final path would be ```BASE_PATH/FILE_LIST_TIME_STAMP_PATH/```.
 

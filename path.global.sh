@@ -3,7 +3,7 @@ SPKR_IDs=()
 BASE_PATH=''
 ORIGINAL_FILE_LIST_PATH='' # path to scp files
 
-# fbank_or_plp
+# feature_extraction
 WAV_PATH='WAVE/'
 PLP_SCP_PATH='PLP_SCP/'
 PLP_PATH='PLP/'
