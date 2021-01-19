@@ -23,7 +23,6 @@ if [ '$FBK' = true ]; then
         --file_list_path=${FILE_LIST_PATH} \
         --file_list_time_stamp_path=${FILE_LIST_TIME_STAMP_PATH} \
         --feature_type=fbk
-     ./main.fbk.sh
      cd ..
 fi
 
