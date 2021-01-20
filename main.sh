@@ -4,16 +4,17 @@ source flag.global.sh
 
 echo '<<<<<<<<<<<<< begin <<<<<<<<<<<<<'
 
-if [ '$TEMPO_BOOL' = true ]; then
-    cd ${PROJECT_PATH}tempo
-    python main.py \
-        --show_warning=${SHOW_WARNING} \
-        --scp_path=${ORIGINAL_FILE_LIST_PATH} \
-        --tempo_path=${BASE_PATH}${WAV_PATH}
-    cd ${PROJECT_PATH}
+if [ $TEMPO_BOOL = true ]; then
+   echo Implementing tempo stretch under folder ${PROJECT_PATH}tempo/
+   cd ${PROJECT_PATH}tempo/
+   python main.py \
+      --show_warning=${SHOW_WARNING} \
+      --scp_path=${ORIGINAL_FILE_LIST_PATH} \
+      --tempo_path=${BASE_PATH}${WAV_PATH}
+   cd ${PROJECT_PATH}
 fi
 
-if [ '$FBK' = true ]; then
+if [ $FBK = true ]; then
      cd ${PROJECT_PATH}feature_extraction
      python main.py \
         --base_path=${BASE_PATH} \
@@ -26,7 +27,7 @@ if [ '$FBK' = true ]; then
      cd ${PROJECT_PATH}
 fi
 
-if [ '$PLP' = true ]; then
+if [ $PLP = true ]; then
      cd ${PROJECT_PATH}feature_extraction
      python main.py \
         --base_path=${BASE_PATH} \
@@ -39,7 +40,7 @@ if [ '$PLP' = true ]; then
      cd ${PROJECT_PATH}
 fi
 
-if [ '$MFCC' = true ]; then
+if [ $MFCC = true ]; then
      cd ${PROJECT_PATH}feature_extraction
      python main.py \
         --base_path=${BASE_PATH} \
@@ -53,4 +54,4 @@ if [ '$MFCC' = true ]; then
 fi
 
 
-echo script finished, for 
+echo script finished, for cmvn and htk2kaldi, please use script under ./cmvn and ./htk2kaldi, resp.
