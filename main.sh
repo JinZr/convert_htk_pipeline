@@ -5,16 +5,16 @@ source flag.global.sh
 echo '<<<<<<<<<<<<< begin <<<<<<<<<<<<<'
 
 if [ '$TEMPO_BOOL' = true ]; then
-    cd ./tempo
+    cd ${PROJECT_PATH}tempo
     python main.py \
         --show_warning=${SHOW_WARNING} \
         --scp_path=${ORIGINAL_FILE_LIST_PATH} \
         --tempo_path=${BASE_PATH}
-    cd ..
+    cd ${PROJECT_PATH}
 fi
 
 if [ '$FBK' = true ]; then
-     cd ./feature_extraction
+     cd ${PROJECT_PATH}feature_extraction
      python main.py \
         --base_path=${BASE_PATH} \
         --wav_path=${WAV_PATH} \
@@ -23,11 +23,11 @@ if [ '$FBK' = true ]; then
         --file_list_path=${FILE_LIST_PATH} \
         --file_list_time_stamp_path=${FILE_LIST_TIME_STAMP_PATH} \
         --feature_type=fbk
-     cd ..
+     cd ${PROJECT_PATH}
 fi
 
 if [ '$PLP' = true ]; then
-     cd ./feature_extraction
+     cd ${PROJECT_PATH}feature_extraction
      python main.py \
         --base_path=${BASE_PATH} \
         --wav_path=${WAV_PATH} \
@@ -36,11 +36,11 @@ if [ '$PLP' = true ]; then
         --file_list_path=${FILE_LIST_PATH} \
         --file_list_time_stamp_path=${FILE_LIST_TIME_STAMP_PATH} \
         --feature_type=plp
-     cd ..
+     cd ${PROJECT_PATH}
 fi
 
 if [ '$MFCC' = true ]; then
-     cd ./feature_extraction
+     cd ${PROJECT_PATH}feature_extraction
      python main.py \
         --base_path=${BASE_PATH} \
         --wav_path=${WAV_PATH} \
@@ -49,7 +49,7 @@ if [ '$MFCC' = true ]; then
         --file_list_path=${FILE_LIST_PATH} \
         --file_list_time_stamp_path=${FILE_LIST_TIME_STAMP_PATH} \
         --feature_type=mfcc
-     cd ..
+     cd ${PROJECT_PATH}
 fi
 
 
