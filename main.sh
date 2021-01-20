@@ -9,7 +9,7 @@ if [ '$TEMPO_BOOL' = true ]; then
     python main.py \
         --show_warning=${SHOW_WARNING} \
         --scp_path=${ORIGINAL_FILE_LIST_PATH} \
-        --tempo_path=${BASE_PATH}
+        --tempo_path=${BASE_PATH}${WAV_PATH}
     cd ${PROJECT_PATH}
 fi
 
