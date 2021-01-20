@@ -2,13 +2,11 @@
 
 # credit: Mengzhe GENG
 
-cd BASE_PATH
-
 for spk in ${SPKR_IDs}; do
     echo "<<<<<<<<<<<<<<<<<< processing: ${spk} <<<<<<<<<<<<<<<<<<"
 
     mkdir -p ${BASE_PATH}${CMVN_PATH}${spk}
-    cp -r /project_bdda3/bdda/mengzhe/DataAugmentation/uaspeech_newcfgs/exp/H2/dnntrain_testcv_0.6/{base,CMDs,htefiles,lib,local-dnn,xwrd.clustered.mlist} ${BASE_PATH}${CMVN_PATH}${spk}/
+    cp -r ${CMVN_CONFIG_PATH}/{base,CMDs,htefiles,lib,local-dnn,xwrd.clustered.mlist} ${BASE_PATH}${CMVN_PATH}${spk}/
     cd ${BASE_PATH}${CMVN_PATH}${spk}/lib
 
     rm -rf flists
