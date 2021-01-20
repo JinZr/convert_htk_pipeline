@@ -51,3 +51,6 @@ if [ '$MFCC' = true ]; then
         --feature_type=mfcc
      cd ..
 fi
+
+
+echo script finished, for 

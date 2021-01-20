@@ -3,7 +3,7 @@ SPKR_IDs=$(ls "${BASE_PATH}${WAV_PATH}")
 BASE_PATH='/project_bdda3/bdda/zrjin/Tempo_Generated/'
 ORIGINAL_FILE_LIST_PATH='/project/bdda/mengzhe/DataAugmentation/Data/UASpeech/UASpeech_trim/scp/train.orig.wav.scp' 
     # path to scp files
-
+PROJECT_PATH=/project_bdda3/bdda/zrjin/convert_htk_pipeline/
 
 # feature_extraction
 WAV_PATH='WAVE/'
@@ -25,5 +25,10 @@ RETRAINED_HMM_PATH=''
 HMM_LIST_FILE=''
 
 # CMVN
-CMVN_PATH='CMVN/'
-CMVN_CONFIG_PATH=''
+CMVN_PATH=CMVN/
+CMVN_CONFIG_PATH=${PROJECT_PATH}cmvn/cmvn.configs
+
+# htk2kaldi
+KALDI_PATH=KALDI/
+PREPROCESS_PATH=${PROJECT_PATH}htk2kaldi/
+CONFIG_PATH=${PREPROCESS_PATH}cfgs/
