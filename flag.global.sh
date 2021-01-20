@@ -1,1 +1,1 @@
-FEATURE_TYPE = 'plp'
+FEATURE_TYPE='plp'

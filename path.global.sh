@@ -1,9 +1,9 @@
 SPKR_IDs=$(ls "${BASE_PATH}${WAV_PATH}")
 
-BASE_PATH='/project_bdda3/bdda/zrjin/Tempo_Generated/'
+BASE_PATH='/project_bdda4/bdda/zrjin/Tempo_Generated/'
 ORIGINAL_FILE_LIST_PATH='/project/bdda/mengzhe/DataAugmentation/Data/UASpeech/UASpeech_trim/scp/train.orig.wav.scp' 
     # path to scp files
-PROJECT_PATH=/project_bdda3/bdda/zrjin/convert_htk_pipeline/
+PROJECT_PATH=/project_bdda4/bdda/zrjin/convert_htk_pipeline/
 
 # feature_extraction
 WAV_PATH='WAVE/'
