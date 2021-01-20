@@ -1,0 +1,12 @@
+# Running HNLayerwise training script
+local-dnn/submits/submit_HNLayerwise.sh -GPUID 2 -SGE CUDA htefiles/HTE
+------------------------------------
+# Running HNFineTune training script
+local-dnn/submits/submit_HNFineTune.sh -GPUID 2 -SGE CUDA htefiles/HTE 55482
+------------------------------------
+------------------------------------
+/opt/share/gridengine/default/spool/bdda1/job_scripts/55482 -GPUID 2 -SGE CUDA htefiles/HTE
+------------------------------------
+------------------------------------
+/opt/share/gridengine/default/spool/bdda1/job_scripts/55483 -GPUID 2 -SGE CUDA htefiles/HTE
+------------------------------------

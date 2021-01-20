@@ -1,0 +1,50 @@
+#---------------------------------------------------------------#
+# DNN Environment File #
+# #
+#---------------------------------------------------------------#
+
+# -------------------------------------------------------------
+# GENERAL DATA DEFINITION
+# ------------------------------------------------------------
+
+set DNNSTRUCT = 720X2000X2000X2000X2000X2000X2000X12000
+
+set FEADIM = 80
+set TARGETKIND = FBANK_D_Z
+set INPUTCTX = -4,-3,-2,-1,0,1,2,3,4
+set COMPUTING = CUDA    #ACCELERATE: CUDA, MKL, CPU
+set MINIBATCH = 800
+set CACHESIZE = 400000000
+set PTLRKIND = LIST
+set PTLRVALS = 0.001
+set PTMINEPOCHNUM = 1
+set PTMAXEPOCHNUM = 1
+set FTLRKIND = NEWBOB
+set FTNEWBOBCRT = ACC
+set FTRAMPSTART = 0.001
+set FTSTOPDIFF = 0.001
+set FTLRVALS = 0.002
+set FTMINEPOCHNUM = 16
+set FTMAXEPOCHNUM = 20
+set MOMENTUM = 0.5
+set LOGOBSVPRIOR = -135.0
+set HIDACTKIND = SIGMOID
+set OUTACTKIND = SOFTMAX
+set PTWGHTUPDATELIM = 0.16
+set PTBIASUPDATELIM = 0.16
+set FTWGHTUPDATELIM = 0.16
+set FTBIASUPDATELIM = 0.16
+set WEIGHTDECAY = 0.002
+
+# set HNTRAINSGD = /home/xyliu/CUHTK/htk/HTKTools/HNTrainSGD 
+
+#set GPUDEVID = 0
+
+#set MAPPATH = lib/mlists/state2phone.map
+
+setenv LD_LIBRARY_PATH /home/xyliu/import_MIL/cuda-7.0/lib64:/home/xyliu/mnt_local/xyliu_sepc24/import_MIL:/usr/local/cuda/lib64:/opt/intel/lib/intel64:$LD_LIBRARY_PATH
+
+#---------------------------------------------------------------#
+# END OF ENVIRONMENT DEFINITION #
+#---------------------------------------------------------------#
+

@@ -1,0 +1,9 @@
+#!/bin/tcsh
+set HCTRACE = 1
+set TESTDATALIST = lib/flists.input/traincv.sort.scp
+set HCCONFIG = lib/cfgs/cmn.cfg
+set HCCMN = TRUE
+#                BPL101-53464-20111021-202951-sc_SD1XXXX_0001357_0001396.plp
+set HCSPKRMASK = '%%%%%%-?????%%%%%%%%%%%%%%%%???_*'
+set HCPATHMASK = '%%%%%%*'
+set HCBIN = local-dnn/nbin/HCompV
